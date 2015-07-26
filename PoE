@@ -1,0 +1,53 @@
+F2::Remaining() ;
+F3::OosCommand() ;
+F4::CheckItemLevel() ;
+XButton2::FastLogOut() ;
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+CheckItemLevel(){
+        BlockInput On
+        Send {LButton}
+        Send {Enter}
+        Sleep 2
+        Send /itemlevel
+        Send {Enter}
+        Sleep, 75
+        Send {LButton}
+        BlockInput Off
+        return
+}
+ 
+OosCommand(){
+        BlockInput On
+        Send {Enter}
+        Sleep 2
+        Send /oos
+        Send {Enter}
+        BlockInput Off
+        return
+}
+ 
+Remaining(){
+        BlockInput On
+        Send {Enter}
+        Sleep 2
+        Send /remaining
+        Send {Enter}
+        Sleep, 75
+        BlockInput Off
+        return
+}
+ 
+FastLogOut(){
+        BlockInput On
+        SetDefaultMouseSpeed 0
+        sendinput {esc}
+        MouseClick, left, 959, 432, 1, 1
+        BlockInput Off
+        return
+}
